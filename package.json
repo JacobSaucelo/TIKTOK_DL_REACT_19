@@ -1,0 +1,17 @@
+{
+  "name": "tiktok_dl_react_19",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:BACKEND": "cd BACKEND && node main.js",
+    "start:FRONTEND": "cd FRONTEND && npm run dev",
+    "dev": "concurrently \"npm run start:BACKEND\" \"npm run start:FRONTEND\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
