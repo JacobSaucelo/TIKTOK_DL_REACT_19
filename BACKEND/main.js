@@ -28,7 +28,12 @@ app.post("/download", async (req, res) => {
   }
 
   try {
-    const result = await Tiktok.Downloader(url, { version: "v3" });
+    const result = await Tiktok.Downloader(url, { version: "v3" }).then(
+      (result) => {
+        console.log("result: ", result);
+        return result;
+      }
+    );
 
     res.json({
       success: true,
