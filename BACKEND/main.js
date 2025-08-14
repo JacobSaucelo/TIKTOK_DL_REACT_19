@@ -1,5 +1,6 @@
 const Tiktok = require("@tobyg74/tiktok-api-dl");
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ let items = [
   { id: 4, name: "Item D" },
 ];
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/api/items", (req, res) => {
@@ -30,7 +32,7 @@ app.post("/download", async (req, res) => {
   try {
     const result = await Tiktok.Downloader(url, { version: "v3" }).then(
       (result) => {
-        console.log("result: ", result);
+        // console.log("result: ", result);
         return result;
       }
     );
